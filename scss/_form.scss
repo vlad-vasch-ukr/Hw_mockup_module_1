@@ -1,0 +1,82 @@
+.form {
+    background-color: $white;
+    padding: 3.8rem 3rem 3.5rem 3rem;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 6px 6px 10px 0px rgba(0,0,0,.15);
+    border-radius: 20px;
+    margin: 0 auto;
+    min-height: 391px;
+    @media (min-width: map-get($breakpoints, md)) {
+        margin: 0 0 0 auto;
+    }
+
+    &__title {
+        display: block;
+        font-size: 2.57rem;
+        line-height: .9;
+        font-weight: 600;
+        color: $primaryColor;
+        margin-bottom: 3rem;
+        position: relative;
+        right: -.3rem;
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #888888;
+        height: 50px;
+        background-color: #f2f2f2;
+        padding: 0 1rem;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+
+        &:not(:first-child), &-select {
+            margin-top: 1.7rem;
+        }
+
+        &-select {
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-color: #f2f2f2;
+                position: absolute;
+                top: 19px;
+                right: 0;
+                z-index: 5;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 5px 5px 5px;
+                border-color: transparent transparent #636363 transparent;
+                position: absolute;
+                top: calc(50% - 2.5px);
+                right: 10px;
+                transform: rotate(-180deg);
+                z-index: 10;
+            }
+        }
+    }
+
+    &__submit {
+        margin: 3.1rem 0 0 auto;
+        transition: box-shadow $transition ease-in;
+
+        &:hover {
+            box-shadow: 3px 3px 5px 0px rgba(0,0,0,.5);
+        }
+    }
+}

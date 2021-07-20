@@ -1,0 +1,23 @@
+//grid
+$breakpoints: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1260px);
+$columnsCount: 12;
+$colWidth: 100%/$columnsCount;
+$colGutter: 1.5rem;
+$container-max-widths: ("sm": 540px, "md":720px, "lg":960px, "xl":1200px);
+$containerGutter: 15px;
+
+//sizes 
+$headerHeight: 100px;
+
+//colors
+$white: #fff;
+$primaryColor: #5b6ceb;
+$textColor: #555555;
+
+//fonts 
+$fontSize: 10px;
+$fontOpen: 'Open Sans', sans-serif;
+$fontScript: 'FREESCPT';
+
+//animation
+$transition: .3s;

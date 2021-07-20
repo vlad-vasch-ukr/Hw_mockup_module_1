@@ -1,0 +1,137 @@
+.footer {
+
+  &__top {
+    @include flex(center, center);
+    background-color: $primaryColor;
+    min-height: 450px;
+    color: $white;
+    padding: 3rem 0;
+  }
+
+  &__bottom {
+    @include flex(center, center);
+    min-height: 100px;
+    background-color: #5363d8;
+  }
+
+  &__rights {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #b7bffc;
+    text-align: center;
+    @media (min-width: map-get($breakpoints, lg)) {
+      position: relative;
+      top: .5rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 2.5rem 0;
+    text-align: center;
+    @media (min-width: map-get($breakpoints, lg)) {
+      text-align: start;
+      margin: 0 0 5rem 0;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    margin: 0 0 3rem 0;
+    @media (min-width: map-get($breakpoints, lg)) {
+      max-width: 470px;
+      margin: 0 0 7rem 0;
+    }
+  }
+
+  &__social {
+    @extend %list;
+    display: flex;
+    justify-content: center;
+    @media (min-width: map-get($breakpoints, lg)) {
+      justify-content: flex-start;
+    }
+
+    &-link {
+      @extend %link;
+
+      & > span {
+        font-size: 2.1rem;
+        display: inline-block;
+      }
+    }
+
+    &-item {
+
+      &:not(:first-child) {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+
+  &__contacts {
+    @extend %list;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__contact {
+    @include flex(center, center);
+    width: 100%;
+    @media (min-width: 460px) {
+      width: 50%;
+      justify-content: flex-start;
+    }
+
+    &:not(:first-child):not(:nth-child(2)) {
+      margin-top: 2.5rem;
+    }
+
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+      @media (min-width: 460px) {
+        margin-top: 0;
+      }
+    }
+
+    &-wrap > a {
+      display: block
+    }
+    
+    &-link {
+      @extend %link;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      font-weight: 400;
+    }
+
+    [class^="icon-"] {
+      font-size: 1.5rem;
+      margin-right: 2rem;
+    }
+
+    address {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+    }
+
+    &:nth-child(2), &:last-child {
+      @media (min-width: map-get($breakpoints, lg)) {
+        position: relative;
+        top: -1rem;
+        right: -2rem;
+      }
+    }
+  }
+
+  .container-md {
+    @media (min-width: map-get($breakpoints, lg)) {
+      position: relative;
+      top: -.5rem;
+    }
+  }
+}

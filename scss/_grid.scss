@@ -1,0 +1,38 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$colGutter;
+    margin-right: -$colGutter;
+}
+
+@each $name, $point in $breakpoints {
+    @for $i from 1 through $columnsCount {
+        .col-#{$name}-#{$i} {
+            @extend %grid-column;
+            @media (min-width: $point) {
+                max-width: $colWidth * $i;
+            }
+        }
+    }
+}
+
+@mixin container {
+    width: 100%;
+    padding-right: $containerGutter;
+    padding-left: $containerGutter;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@each $name, $point in $breakpoints {
+    .container-#{$name} {
+        @include container;
+        @each $max-width-name, $max-width  in $container-max-widths {
+            @if (map-get($breakpoints, $name) <= map-get($breakpoints, $max-width-name)) {
+                @media (min-width: map-get($breakpoints, $max-width-name)) {
+                    max-width: $max-width; 
+                } 
+            } 
+        } 
+    }
+}

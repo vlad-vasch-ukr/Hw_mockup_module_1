@@ -1,0 +1,22 @@
+%link {
+    text-decoration: none;
+    color: inherit;
+}
+
+%list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+%grid-column {
+    position: relative;
+    padding: 0 $colGutter;
+    width: 100%;
+}
+
+%img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}

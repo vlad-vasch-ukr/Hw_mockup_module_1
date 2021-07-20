@@ -1,0 +1,59 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &__item {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+
+    &-wrapper {
+      position: relative;
+      width: 50%;
+      cursor: pointer;
+      max-height: 256px;
+      max-width: 353px;
+      @media (min-width: map-get($breakpoints, md)) {
+        width: 25%;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #5b6ceb, $alpha: 0.8);
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity $transition ease-in;
+      }
+
+      & > .icon-search {
+        @include flex(center, center);
+        font-size: 1.8rem;
+        color: #5b6ceb;
+        width: 42px;
+        height: 42px;
+        background-color: $white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity $transition ease-in;
+      }
+
+      &:hover {
+        &::before, & > .icon-search {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

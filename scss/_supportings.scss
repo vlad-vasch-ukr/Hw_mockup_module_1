@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $fontSize;
+  font-family: $fontOpen;
+}
+
+.btn-primary {
+  @include flex(center, center);
+  border: none;
+  outline: none;
+  color: $white;
+  background-color: $primaryColor;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  max-width: 170px;
+  width: 100%;
+  height: 5rem;
+  border-radius: 10px
+}
+
+.mt-25 {
+  margin-top: 1.5rem;
+  @media (min-width: map-get($breakpoints, sm)) {
+      margin-top: 2.3rem;
+  }
+}
+
+.mt-sm-0 {
+  @media (min-width: map-get($breakpoints, sm)) {
+      margin-top: 0;
+  }
+}
+
+.mt-30 {
+  margin-top: 3rem;
+}
+
+.mt-sm-0 {
+  @media (min-width: map-get($breakpoints, sm)) {
+      margin-top: 0;
+  }
+}
+
+.mt-lg-0 {
+  @media (min-width: map-get($breakpoints, lg)) {
+      margin-top: 0;
+  }
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  line-height: 4.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $primaryColor;
+  margin: 0;
+
+  &--center {
+      text-align: center;
+  }
+}
+
+.section-subtitle {
+  font-family: $fontScript;
+  font-size: 4.1rem;
+  line-height: 6.1rem;
+  text-align: center;
+  font-weight: 400;
+  color: #777777;
+  margin-bottom: 6rem;
+}
